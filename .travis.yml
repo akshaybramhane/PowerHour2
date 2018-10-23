@@ -17,11 +17,11 @@ before_install:
 - export PATH=./sfdx/$(pwd):$PATH
 - sfdx --version
 - sfdx plugins --core
-- sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
-  --username $USERNAME --setdefaultdevhubusername -a DevHubOrg
+- sfdx force:auth:jwt:grant -i $CONSUMERKEY -f assets/server.key
+  -u $USERNAME -s -a DevHubOrg
 script:
-- sfdx force:org:create -v DevHubOrg -s -f config/project-scratch-def.json -a csiorg
-- sfdx force:org:display -u csiorg
-- sfdx force:source:push -u csiorg
-- sfdx force:apex:test:run -u csiorg --wait 10
-- sfdx force:org:delete -u csiorg -p
+- sfdx force:org:create -v DevHubOrg -s -f config/project-scratch-def.json -a ciorg
+- sfdx force:org:display -u ciorg
+- sfdx force:source:push -u ciorg
+- sfdx force:apex:test:run -u ciorg --wait 10
+- sfdx force:org:delete -u ciorg -p
