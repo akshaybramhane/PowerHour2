@@ -1,2 +1,14 @@
-# PowerHour2
-This is a demo project for PowerHour 2. (Mac)
+# SFDX  App
+
+## Dev, Build and Test
+
+
+## Resources
+
+
+## Description of Files and Directories
+
+
+## Issues
+
+
